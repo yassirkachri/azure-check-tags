@@ -1,0 +1,65 @@
+{
+    "Description" : "Check if Resources  are correctly Tagged",
+
+    "Comments"  : [
+                  "Name        : a common name. It will be used to create the name of the output file [Account Name+OutputFilename]",
+                  "Provider    : Azure,  ***TO BE IMPLEMENTED***> AWS,GCP,...",
+                  "Action      : ***TO BE IMPLEMENTED*** Action to be performed if the tags are not matching the regexp ",
+                  "Exclude     : ***TO BE IMPLEMENTED*** Exclude resources from the check",
+                  "Level       : RG for Resource Groups/ ALL for all resources within a subscription  / VM=Microsoft.Compute/virtualMachines ",
+                  "Compare     : ***TO BE IMPLEMENTED*** yes : case sensitive / no : no case sensitive ",
+                  "AutoShutdown: ***TO BE IMPLEMENTED*** Check if autoshutdown is active on  Virtual Machine  [only used with Levels :ALL and VM]",
+                  "Backup      : ***TO BE IMPLEMENTED***Check if their is a Backup policy active on Virtual Machine  [only used with Levels :ALL and VM]",
+                  "Credentials : for Azure : Subscription ID / Client ID / Client Secret / Tenant ID",
+                  "OutputFilename & LogFilename :  a YYYYMMDD-HHMM- is added for every file"
+                  ],
+
+    " NOT MODIFY":    "*****NOT MODIFY THE NEXT 3 LINES*******",
+        "AzureAuthentEndpoint" :"https://login.microsoftonline.com",
+        "AzureResourcesEndpoint" :"https://management.azure.com",
+        "AzureResourcesAPIVersion" :"2017-05-10",
+    "END NOT MODIFY":    "*****END NOT MODIFY*******",
+    
+    "OutputSeparator" :";",
+    "OutputFilename" :"output.csv",
+
+    "Accounts" : [
+        {
+            "Name" :  "Account-1"  ,
+            "Provider" : "Azure",
+            "Action" : "NOT YET IMPLEMENTED",
+            "Level"  : "ALL",
+            "Exclude" : ["NOT YET IMPLEMENTED"],
+            "Credentials" : {  
+                "subscription_id" :  "xxxxxxxxxxxxxxxxxxx",
+                "client_id" : "xxxxxxxxxxxxxxxxxxx",
+                "client_secret" : "xxxxxxxxxxxxxxxxxxx",
+                "tenant_id" : "xxxxxxxxxxxxxxxxxxx"
+            },
+            "Tags" : [
+                    {	"Key":"KEY 1","Value":"[a-z]+" },
+                    {	"Key":"KEY 2","Value":"[a-z]+" },
+                    {	"Key":"KEY 3","Value":"[a-z]+"}
+            ]
+        },       
+        {
+            "Name" :  "Another-Account"  ,
+            "Provider" : "Azure",
+            "Action" : "NOT YET IMPLEMENTED",
+            "Level"  : "ALL",
+            "Exclude" : ["NOT YET IMPLEMENTED"],
+            "Credentials" : {  
+                "subscription_id" :  "xxxxxxxxxxxxxxxxxxx",
+                "client_id" : "xxxxxxxxxxxxxxxxxxx",
+                "client_secret" : "xxxxxxxxxxxxxxxxxxx",
+                "tenant_id" : "xxxxxxxxxxxxxxxxxxx"
+            },
+            "Tags" : [
+                    {	"Key":"KEY 1","Value":"[a-z]+" },
+                    {	"Key":"KEY 2","Value":"[a-z]+" },
+                    {	"Key":"KEY 3","Value":"[a-z]+"}
+            ]
+        }
+                
+        ]
+}
