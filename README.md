@@ -9,12 +9,8 @@ Check if Azure resource  are well tagged within multi-subscriptions. The conform
 
 
 
-# Lanching script
-* With Build
-   * ***go build***
-   * ***./azure-check-tags***
-* Withdout Building 
-   * ***go run \*.go***
+# Launching script
+* ***go run \*.go***
    
 # How it Compare Tags
 
